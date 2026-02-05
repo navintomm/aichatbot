@@ -35,7 +35,7 @@ const limiter = rateLimit({
 app.use('/api/', limiter);
 
 // Serve static files
-app.use(express.static(__dirname));
+// app.use(express.static(__dirname));
 
 // ===========================
 // API ROUTES

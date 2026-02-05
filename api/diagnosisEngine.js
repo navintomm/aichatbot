@@ -164,6 +164,9 @@ class DiagnosisEngine {
 
         confidence = confidence * severityFactor * durationFactor;
 
+        // Cap confidence at 100%
+        confidence = Math.min(confidence, 100);
+
         return {
             matchScore: matchedWeight,
             confidence: Math.round(confidence * 10) / 10,

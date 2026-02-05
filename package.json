@@ -3,9 +3,13 @@
   "version": "1.0.0",
   "description": "AI Healthcare Assistant Backend with NLP-based Disease Diagnosis",
   "main": "server.js",
+  "engines": {
+    "node": "18.x"
+  },
   "scripts": {
     "start": "node api/index.js",
-    "dev": "nodemon api/index.js"
+    "dev": "nodemon api/index.js",
+    "build": "echo 'no build step'"
   },
   "keywords": [
     "healthcare",

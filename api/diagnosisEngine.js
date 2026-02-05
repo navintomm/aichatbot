@@ -36,7 +36,7 @@ class DiagnosisEngine {
         const rankedDiseases = this.rankDiseases(diseaseScores);
 
         // Dynamic threshold: If very few symptoms, lower threshold to capture primary matches
-        const threshold = userSymptoms.length === 1 ? 15 : 20;
+        const threshold = 5; // Reduced from 20 to 5 to catch partial matches like "Body aches + Thirst"
         const topMatches = rankedDiseases.filter(d => d.confidence >= threshold);
 
         // Generate combinations and differential diagnoses

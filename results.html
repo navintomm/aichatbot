@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diagnosis Results - AI Healthcare Assistant</title>
+    <meta name="description" content="Your personalized diagnosis results with possible conditions and recommendations">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="results-styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="results-header">
+            <button class="back-btn" onclick="window.location.href='index.html'">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M15 10H5M5 10L10 15M5 10L10 5" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+                New Analysis
+            </button>
+            <h1 class="results-title">Your Diagnosis Results</h1>
+            <p class="results-subtitle">AI-powered analysis based on your symptoms</p>
+        </header>
+
+        <!-- Loading State -->
+        <div id="loading-state" class="loading-container">
+            <div class="spinner"></div>
+            <p>Analyzing your symptoms...</p>
+        </div>
+
+        <!-- Results Container -->
+        <div id="results-container" style="display: none;">
+            <!-- Input Summary -->
+            <section class="results-card input-summary">
+                <h2 class="card-title">Your Symptoms</h2>
+                <div class="symptoms-grid" id="symptoms-display"></div>
+                <div class="metadata-grid" id="metadata-display"></div>
+            </section>
+
+            <!-- Red Flags (Emergency Alerts) -->
+            <div id="red-flags-container"></div>
+
+            <!-- Primary Diagnoses -->
+            <section class="results-card">
+                <h2 class="card-title">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                    Top Possible Conditions
+                </h2>
+                <div id="primary-diagnoses"></div>
+            </section>
+
+            <!-- Disease Combinations -->
+            <section class="results-card" id="combinations-section" style="display: none;">
+                <h2 class="card-title">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2v20M2 12h20" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                    </svg>
+                    Possible Combinations
+                </h2>
+                <div id="combinations-display"></div>
+            </section>
+
+            <!-- All Possibilities -->
+            <section class="results-card">
+                <h2 class="card-title">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M9 11l3 3L22 4" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                        <path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                    All Possible Conditions
+                </h2>
+                <div class="all-possibilities-grid" id="all-possibilities"></div>
+            </section>
+
+            <!-- Recommendations -->
+            <section class="results-card recommendations-card">
+                <h2 class="card-title">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"
+                            fill="currentColor" />
+                    </svg>
+                    General Recommendations
+                </h2>
+                <div id="recommendations-display"></div>
+            </section>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="caution-message">
+                <svg class="caution-icon" width="20" height="20" viewBox="0 0 20 20" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M10 0C4.48 0 0 4.48 0 10s4.48 10 10 10 10-4.48 10-10S15.52 0 10 0zm1 15H9v-2h2v2zm0-4H9V5h2v6z"
+                        fill="currentColor" />
+                </svg>
+                <p class="caution-text"><strong>IMPORTANT DISCLAIMER:</strong> This is a preliminary analysis tool only.
+                    Always consult a qualified healthcare professional for accurate diagnosis and treatment. Do not use
+                    this tool for emergency situations.</p>
+            </div>
+        </footer>
+    </div>
+
+    <script src="results-script.js"></script>
+</body>
+
+</html>
